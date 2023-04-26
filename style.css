@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Josefin+Sans:wght@100&family=Roboto:wght@400&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: #283655 !important;
+    background-color: #f7faff !important;
+    font-family: 'Roboto', sans-serif;
+    background: url(media/background_body.jpg) no-repeat fixed 50% 50%;
+    background-size: cover;
+}
+
+h2,
+h3 {
+    font-family: 'Audiowide', sans-serif;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-shadow: -1px -1px -1px #283655;
+}
+
+li {
+    list-style-type: none;
+}
+
+/***************************************** PRELOADER ********************************************/
+
+.preloader {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background-color: #f7faff;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: opacity 2s ease-in, visibility 2s ease-in;
+}
+
+.preloader--hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.preloader span {
+    position: absolute;
+    margin-bottom: 130px;
+}
+
+.preloader::before {
+    content: "";
+    position: absolute;
+    width: 68px;
+    height: 68px;
+    background: #283655;
+    border-radius: 5%;
+    animation: load-before 1.5s linear infinite;
+}
+
+.preloader::after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1px solid #f7faff;
+    filter: drop-shadow(0px 1px 8px #f7faff);
+    background: #283655;
+}
+
+@keyframes load-before {
+
+    50% {
+        border-radius: 50%;
+        border: 1px solid #f7faff;
+        filter: drop-shadow(0px 0px 20px #283655);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/***************************************** HEADER ********************************************/
+.presentation {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.navbar {
+    background-color: #FAFAFA;
+    opacity: 0.85;
+    height: 42px;
+    transition: 0.7s;
+}
+
+.navbar-nav {
+    width: 80% !important;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+header {
+    text-align: center;
+}
+
+h1 {
+    padding: 90px 0 10px 0;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 4.3em;
+    text-transform: uppercase;
+}
+
+#line {
+    height: 1px;
+    background-color: #a09d9d;
+    width: 25%;
+    margin: 0 auto;
+}
+
+h2 {
+    padding: 20px 0 50px 0;
+    font-size: 3em;
+    text-transform: uppercase;
+}
+
+.presentation-wrapper {
+    min-height: 220px;
+}
+
+.img-container {
+    position: relative;
+}
+
+.img-container img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%;
+    border: 1px solid #cac8c8;
+    box-shadow: 0 0 5px #a09d9d;
+
+}
+
+#description {
+    filter:
+        drop-shadow(0px 0px 5px #fafafa) drop-shadow(0px 0px 5px #fafafa);
+}
+
+.infos {
+    border: 1px solid #cac8c8;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-radius: 15px;
+    background-color: #f7faff52;
+    background-color: #f7faff52;
+    max-width: 170px;
+}
+
+header .button a {
+    margin: 50px 0;
+    padding: 20px 80px;
+    border: 1px solid #cac8c8;
+    background-color: #f7faff9c;
+    max-width: 300px;
+    border-radius: 15px;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+header .button a:hover {
+    text-decoration: none;
+    color: #283655;
+}
+
+header .button a:before {
+    content: "";
+    position: absolute;
+    height: 150px;
+    width: 50px;
+    background: #a09d9d;
+    left: -55px;
+    top: -40px;
+    transform: rotate(37deg);
+    transition: all .3s;
+    opacity: 0.2;
+}
+
+header .button a:hover:before {
+    left: 95%;
+}
+
+
+/********************************************** PARCOURS **************************************************/
+#parcours {
+    margin-top: 10vh;
+    background-color: #f7faff52;
+    padding: 2.5em;
+    border-radius: 15px;
+    border: 1px solid #cac8c8;
+
+}
+
+#parcours h4,
+#parcours h6 {
+    margin-left: 20px;
+}
+
+#parcours {}
+
+#parcours {}
+
+#parcours {}
+
+#parcours {}
+
+
+
+
+/********************************************** FOOTER **************************************************/
+footer {
+    min-height: 20vh;
+}
+
+/********************************************** MEDIA QUERY **************************************************/
+@media (max-width: 767px) {
+
+    h1 {
+        padding: 45px 0 5px 0;
+        font-size: 2.3em;
+    }
+
+    h2 {
+        padding: 10px 0 25px 0;
+        font-size: 1.5em;
+    }
+
+    .img-container {
+        height: 30vh !important;
+        margin: 15px 0;
+    }
+}
