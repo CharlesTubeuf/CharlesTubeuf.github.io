@@ -1,36 +1,37 @@
-// PRELOADER
+//#region                   PRELOADER
 const loader = document.querySelector('.preloader');
 window.addEventListener("load", () => {
     loader.classList.add('preloader--hidden');
-    loader.addEventListener('transitionend', () =>{
+    loader.addEventListener('transitionend', () => {
         document.body.removeChild(loader);
     })
 });
+//#endregion
 
-// NAVIGATION
-let lastScrollTop = 0;
-navbar = document.getElementById('header-nav');
-window.addEventListener('scroll', function () {
-    const scrollTop = window.pageTOffset ||
-        this.document.documentElement.scrollTop;
+//#region                   NAVIGATION
+document.addEventListener('click', function (event) {
+    var checkbox = document.getElementById('navigationCheckbox');
+    var target = event.target;
+    var excludedSelectors = ['.navigation', ];
+    var isExcluded = excludedSelectors.some(function (selector) {
+        return target.matches(selector) || target.closest(selector);
+    });
 
-    if (scrollTop > lastScrollTop) {
-        navbar.style.top = "-50px";
-    } else {
-        navbar.style.top = "0";
+    if (!isExcluded) {
+        checkbox.checked = false;
     }
-    lastScrollTop = scrollTop;
 });
+//#endregion
 
-// TYPED
+//#region                   TYPED
 if (window.addEventListener("load", () => {
         var typed = new Typed('#description', {
             strings: [
                 "Bonjour à tous et à toutes,<br/> ^700 diplômé d'une <strong>école d'ingénieur</strong>" +
-                " en biologie je suis tombé par hasard dans le <strong>développement web</strong>.<br/> ^1500" +
-                " Rapidement captivé par cette discipline, j'ai décidé d'en faire mon métier.<br/> ^1500" +
+                " en biologie je suis tombé par hasard dans le <strong>développement web</strong>.<br/> ^800" +
+                " Rapidement captivé par cette discipline, j'ai décidé d'en faire mon métier.<br/> ^800" +
                 " Après plusieurs formations et <strong> une année et demie d'alternance</strong>,^800 je suis actuellement à la recherche" +
-                " d'une entreprise pour développer mes compétences et exprimer ma <strong>créativité</strong>.<br/>^1500",
+                " d'une entreprise pour développer mes compétences et exprimer ma <strong>créativité</strong>.<br/>^800",
 
                 "Bonjour à tous et à toutes,<br/>  diplômé d'une <strong>école d'ingénieur</strong>" +
                 " en biologie je suis tombé par hasard dans le <strong>développement web</strong>.<br/> " +
@@ -46,11 +47,41 @@ if (window.addEventListener("load", () => {
                 " d'une entreprise pour développer mes compétences et exprimer ma <strong>créativité</strong>.<br/>" +
                 " Bienvenu sur mon cv !",
             ],
-            typeSpeed: 20,
+            typeSpeed: 10,
             backSpeed: 20,
-            startDelay: 3500,
+            startDelay: 1500,
             onComplete(description) {
                 description.cursor.remove();
             }
         });
     }));
+
+function random($min, $max) {
+    return random() * ($max - $min) + $min;
+}
+
+function randomColor() {
+    return random(0, 16777215).floor().toNumber().toString(16);
+}
+//#endregion
+
+//#region                   SCROLL ANIMATION
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        } else {
+            entry.target.classList.remove('show');
+        }
+    })
+})
+
+const hiddenElements = document.querySelectorAll('.hiddenLeft , .hiddenRight');
+hiddenElements.forEach((el) => observer.observe(el));
+//#endregion
+
+//#region                   3D animation
+
+
+
+//#endregion         
