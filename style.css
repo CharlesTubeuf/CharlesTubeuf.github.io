@@ -1,6 +1,12 @@
 /*#region**************************************** GENERAL ************************************************/
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Josefin+Sans:wght@100&family=Roboto:wght@400&display=swap');
 
+:root {
+    --white: #fff;
+    --blue-dark: #fff;
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -31,24 +37,30 @@ h1 {
 }
 
 h2 {
+    color: #01b2aa !important;
     text-align: center;
     font-family: 'Audiowide', sans-serif;
     letter-spacing: 0.2em;
     padding: 20px 0 50px 0;
     font-size: 3em;
     text-transform: uppercase;
-    text-shadow: -1px -1px -1px #152E4C;
 }
 
 h3 {
     text-align: center;
     font-family: 'Roboto', sans-serif;
     font-size: 1.5em !important;
-    text-shadow: -1px -1px -1px #152E4C;
+    text-shadow: -1px -1px -1px #01b2aa;
 }
 
 li {
     list-style-type: none;
+}
+
+a {
+    text-decoration: none !important;
+    color: #01b2aa !important;
+
 }
 
 section:not(:first-child) {
@@ -87,7 +99,7 @@ section:not(:first-child) {
     position: absolute;
     width: 68px;
     height: 68px;
-    background: #152E4C;
+    background: #01b2aa;
     border-radius: 5%;
     animation: load-before 1.5s linear infinite;
 }
@@ -100,7 +112,7 @@ section:not(:first-child) {
     border-radius: 50%;
     border: 1px solid #f7faff;
     filter: drop-shadow(0px 1px 8px #f7faff);
-    background: #152E4C;
+    background: #01b2aa;
 }
 
 @keyframes load-before {
@@ -108,7 +120,7 @@ section:not(:first-child) {
     50% {
         border-radius: 50%;
         border: 1px solid #f7faff;
-        filter: drop-shadow(0px 0px 20px #152E4C);
+        filter: drop-shadow(0px 0px 20px #01b2aa);
     }
 
     100% {
@@ -154,7 +166,7 @@ section:not(:first-child) {
     height: 3px;
     width: 40px;
     border-radius: 4px;
-    background-color: #152E4C;
+    background-color: #01b2aa;
     transition: 0.3s;
 }
 
@@ -165,7 +177,7 @@ section:not(:first-child) {
     height: 3px;
     width: 40px;
     border-radius: 4px;
-    background-color: #152E4C;
+    background-color: #01b2aa;
     transition: 0.3s;
 }
 
@@ -214,9 +226,8 @@ section:not(:first-child) {
 
 .navigation .nav-menu a {
     position: relative;
-    text-decoration: none;
+    font-family: 'Audiowide', sans-serif;
     text-transform: uppercase;
-    color: #152E4C;
 }
 
 .navigation .nav-menu a::before {
@@ -226,7 +237,7 @@ section:not(:first-child) {
     right: 50%;
     width: 0px;
     height: 1px;
-    background-color: #152e4cb7;
+    background-color: #01b2aab7;
     transition: 0.3s;
 }
 
@@ -249,6 +260,7 @@ section:not(:first-child) {
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
+    gap: 30px 50px;
 }
 
 #line {
@@ -258,8 +270,11 @@ section:not(:first-child) {
     margin: 0 auto;
 }
 
-.presentation-wrapper {
-    min-height: 220px;
+.presentation-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    row-gap: 30px;
 }
 
 .img-container {
@@ -278,23 +293,82 @@ section:not(:first-child) {
     max-height: 100%;
     border-radius: 50%;
     box-shadow: 1px 1px 15px #cac8c8;
+    transition: 0.3s;
 }
 
-#description {
-    filter:
-        drop-shadow(0px 0px 5px #fff) drop-shadow(0px 0px 5px #fff);
+.img-container img:hover {
+    scale: 1.05;
+    box-shadow: 1px 10px 15px #cac8c8;
 }
 
-.infos {
+.description-container {
+    min-height: 304px;
+}
+
+.info-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding: 20px;
     border-radius: 15px;
     box-shadow: 1px 1px 15px #cac8c8;
     background-color: #fff;
     max-width: 220px;
+    min-height: 250px;
 }
+
+.info-item {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.info-container a {
+    color: #152E4C !important;
+}
+
+.info-container i {
+    scale: 1.5;
+    margin-bottom: 0.5em;
+    transition: 0.3s;
+    color: #01b2aa;
+}
+
+.info-container a:hover~i {
+    scale: 1.8;
+    animation: icon-move 2s infinite;
+}
+
+@keyframes icon-move {
+    0% {
+        rotate: 0deg;
+    }
+
+    10% {
+        rotate: -25deg;
+    }
+
+    20% {
+        rotate: 25deg;
+    }
+
+    30% {
+        rotate: -25deg;
+    }
+
+    40% {
+        rotate: 25deg;
+    }
+
+    50% {
+        rotate: 0deg;
+    }
+
+    100% {
+        rotate: 0deg;
+    }
+}
+
+
 
 #presentation .button a {
     margin: 50px 0;
@@ -306,22 +380,23 @@ section:not(:first-child) {
     display: inline-block;
     position: relative;
     overflow: hidden;
-    color: #152E4C;
-    text-decoration: none;
+    color: #01b2aa;
+    transition: 0.3s;
 }
 
 #presentation .button a:hover {
-    text-decoration: none;
-    color: #152E4C;
+    color: #01b2aa;
+    translate: 0px -5px;
+    box-shadow: 1px 5px 15px #cac8c8;
 }
 
 #presentation .button a:before {
     content: "";
     position: absolute;
     height: 150px;
-    width: 50px;
+    width: 30px;
     background: #a09d9d;
-    left: -55px;
+    left: -35px;
     top: -40px;
     transform: rotate(37deg);
     transition: all .3s;
@@ -352,7 +427,7 @@ section:not(:first-child) {
     content: '';
     width: 2px;
     height: 100%;
-    background-color: #152E4C;
+    background-color: #01b2aa;
     transition: 1s;
 }
 
@@ -380,11 +455,6 @@ section:not(:first-child) {
 
 .timeline ul li:nth-child(odd) .date {
     right: 20px;
-    background-image: linear-gradient(to left, #346AAD, #81A9D9);
-}
-
-.timeline ul li:nth-child(even) .date {
-    background-image: linear-gradient(to right, #346AAD, #81A9D9);
 }
 
 .timeline ul li:nth-child(even) {
@@ -404,6 +474,7 @@ section:not(:first-child) {
     height: 35px;
     border-radius: 20px;
     color: #fff;
+    background-image: linear-gradient(-45deg, #01b2aa, #01b2a962);
     display: grid;
     place-items: center;
     font-size: 15px;
@@ -413,7 +484,7 @@ section:not(:first-child) {
 .timeline ul li .circle {
     width: 30px;
     height: 30px;
-    background-color: #425b916c;
+    background-color: #01b2aa6c;
     border-radius: 50%;
     position: absolute;
     top: 0;
@@ -428,7 +499,7 @@ section:not(:first-child) {
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    background-color: #152E4C;
+    background-color: #01b2aa;
 }
 
 .timeline ul li:nth-child(odd) .circle {
@@ -444,13 +515,54 @@ section:not(:first-child) {
 /*#endregion*/
 
 /*#region**************************************** SECTION - COMPETENCES **********************************/
+#skills h2 {
+    margin-bottom: 3em;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 100px;
+}
+
+.skill h3 {
+    text-transform: uppercase;
+    color: #01b2aa;
+}
+
+.chart {
+    position: relative;
+}
+
+.round {
+    transform: rotate(-90deg);
+    transition: all 4s ease;
+    /* SVG */
+    fill: none;
+    stroke: #01b2aa;
+    stroke-width: 8;
+    stroke-linecap: round;
+    stroke-dasharray: 0;
+}
+
+.percent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5em !important;
+    font-weight: bold;
+    color: #01b2aa;
+}
 
 /*#endregion*/
 
 /*#region**************************************** FOOTER *************************************************/
 footer {
     min-height: 20vh;
-    background-color: #152E4C;
+    background-color: #01b2aa;
     color: #fff;
 }
 
@@ -496,6 +608,7 @@ footer {
 }
 
 /*#endregion*/
+
 
 /*#region**************************************** MEDIA QUERY ********************************************/
 @media screen and (max-width: 767px) {
