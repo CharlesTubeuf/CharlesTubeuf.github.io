@@ -57,19 +57,19 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('show');
-            if (entry.target.classList.contains('skill')) {
+            // if (entry.target.classList.contains('skill')) {
 
-                var rounds = entry.target.querySelectorAll(".round");
-                rounds.forEach(round => {
-                    var roundCircle = round.querySelector("circle");
-                    var roundRadius = roundCircle.getAttribute("r");
-                    var roundPercent = round.dataset.percent;
-                    var roundCircum = 2 * roundRadius * Math.PI;
-                    var roundDraw = (roundPercent * roundCircum) / 100;
-                    round.style.strokeDasharray = roundDraw + " 9999";
-                });
+            //     var rounds = entry.target.querySelectorAll(".round");
+            //     rounds.forEach(round => {
+            //         var roundCircle = round.querySelector("circle");
+            //         var roundRadius = roundCircle.getAttribute("r");
+            //         var roundPercent = round.dataset.percent;
+            //         var roundCircum = 2 * roundRadius * Math.PI;
+            //         var roundDraw = (roundPercent * roundCircum) / 100;
+            //         round.style.strokeDasharray = roundDraw + " 9999";
+            //     });
 
-            }
+            // }
         }
     });
 });
@@ -96,17 +96,17 @@ hiddenElements.forEach((el) => observer.observe(el));
 // };
 
 
-// document.addEventListener("DOMContentLoaded", function() {
-//     var rounds = document.querySelectorAll(".round");
-//     rounds.forEach(round => {
-//         var roundCircle = round.querySelector("circle");
-//         var roundRadius = roundCircle.getAttribute("r");
-//         var roundPercent = round.dataset.percent;
-//         var roundCircum = 2 * roundRadius * Math.PI;
-//         var roundDraw = (roundPercent * roundCircum) / 100;
-//         round.style.strokeDasharray = roundDraw + " 9999";
-//     })
-//   });
+document.addEventListener("DOMContentLoaded", function() {
+    var rounds = document.querySelectorAll(".round");
+    rounds.forEach(round => {
+        var roundCircle = round.querySelector("circle");
+        var roundRadius = roundCircle.getAttribute("r");
+        var roundPercent = round.dataset.percent;
+        var roundCircum = 2 * roundRadius * Math.PI;
+        var roundDraw = (roundPercent * roundCircum) / 100;
+        round.style.strokeDasharray = roundDraw + " 9999";
+    })
+  });
 
 
 //#endregion  
