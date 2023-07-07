@@ -536,7 +536,7 @@ section:not(:first-child) {
 
 .round {
     transform: rotate(-90deg);
-    transition: all 4s ease;
+    transition: all 2s ease;
     /* SVG */
     fill: none;
     stroke: #01b2aa;
@@ -690,6 +690,11 @@ section:not(:first-child) {
 /*#endregion*/
 
 /*#region**************************************** SCROLL ANIMATION ***************************************/
+.hiddenScale {
+    scale: 0;
+    filter: blur(5px);
+    transition: all 1s;
+}
 
 .hiddenLeft,
 .hiddenRight {
@@ -718,6 +723,7 @@ section:not(:first-child) {
 
 .show {
     opacity: 1;
+    scale: 1;
     filter: blur(0);
     transform: translateX(0) !important;
 }
