@@ -28,26 +28,26 @@ if (window.addEventListener("load", () => {
         var typed = new Typed('#description', {
             strings: [
                 "Bonjour à tous et à toutes,<br/> ^700 diplômé d'une <strong style='color: #01b2aa;'>école d'ingénieur</strong>" +
-                " en biologie je suis tombé par hasard dans le <strong style='color: #01b2aa;'>développement web</strong>.<br/> ^800" +
+                " en biologie j'ai découvert le <strong style='color: #01b2aa;'>développement web</strong>.<br/> ^800" +
                 " Rapidement captivé par cette discipline, j'ai décidé d'en faire mon métier.<br/> ^800" +
                 " Après plusieurs formations et <strong style='color: #01b2aa;'> une année et demie d'alternance</strong>,^800 je suis actuellement à la recherche" +
                 " d'une entreprise pour développer mes compétences et exprimer ma <strong style='color: #01b2aa;'>créativité</strong>.<br/>^800",
 
                 "Bonjour à tous et à toutes,<br/>  diplômé d'une <strong style='color: #01b2aa;'>école d'ingénieur</strong>" +
-                " en biologie je suis tombé par hasard dans le <strong style='color: #01b2aa;'>développement web</strong>.<br/> " +
+                " en biologie j'ai découvert le <strong style='color: #01b2aa;'>développement web</strong>.<br/> " +
                 " Rapidement captivé par cette discipline, j'ai décidé d'en faire mon métier.<br/> " +
                 " Après plusieurs formations et <strong style='color: #01b2aa;'> une année et demie d'alternance</strong>, je suis actuellement à la recherche" +
                 " d'une entreprise pour développer mes compétences et exprimer ma <strong style='color: #01b2aa;'>créativité</strong>.<br/>" +
                 " Cette animation est réalisée via la library typed.js, merci Matt Boldt.^2000",
 
                 "Bonjour à tous et à toutes,<br/>  diplômé d'une <strong style='color: #01b2aa;'>école d'ingénieur</strong>" +
-                " en biologie je suis tombé par hasard dans le <strong style='color: #01b2aa;'>développement web</strong>.<br/> " +
+                " en biologie j'ai découvert le <strong style='color: #01b2aa;'>développement web</strong>.<br/> " +
                 " Rapidement captivé par cette discipline, j'ai décidé d'en faire mon métier.<br/> " +
                 " Après plusieurs formations et <strong style='color: #01b2aa;'> une année et demie d'alternance</strong>, je suis actuellement à la recherche" +
                 " d'une entreprise pour développer mes compétences et exprimer ma <strong style='color: #01b2aa;'>créativité</strong>.<br/>" +
                 " Bienvenu sur mon cv !",
             ],
-            typeSpeed: 10,
+            typeSpeed: 5,
             backSpeed: 20,
             startDelay: 1500,
             onComplete(description) {
@@ -83,39 +83,6 @@ const hiddenElements = document.querySelectorAll('.hiddenLeft , .hiddenRight , .
 hiddenElements.forEach((el) => observer.observe(el));
 
 //#endregion
-
-//#region                   SKILLS CIRCLE
-
-// function DrawRound(entry) {
-//     document.addEventListener("DOMContentLoaded", () => {
-//         var rounds = entry.querySelectorAll(".round");
-//         rounds.forEach(round => {
-//             var roundCircle = round.querySelector("circle");
-//             var roundRadius = roundCircle.getAttribute("r");
-//             var roundPercent = round.dataset.percent;
-//             var roundCircum = 2 * roundRadius * Math.PI;
-//             var roundDraw = (roundPercent * roundCircum) / 100;
-//             round.style.strokeDasharray = roundDraw + " 99999";
-//         })
-//     })
-
-// };
-
-
-// document.addEventListener("DOMContentLoaded", function() {
-//     var rounds = document.querySelectorAll(".round");
-//     rounds.forEach(round => {
-//         var roundCircle = round.querySelector("circle");
-//         var roundRadius = roundCircle.getAttribute("r");
-//         var roundPercent = round.dataset.percent;
-//         var roundCircum = 2 * roundRadius * Math.PI;
-//         var roundDraw = (roundPercent * roundCircum) / 100;
-//         round.style.strokeDasharray = roundDraw + " 9999";
-//     })
-//   });
-
-
-//#endregion  
 
 
 //#region                   background animation
