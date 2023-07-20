@@ -84,39 +84,6 @@ hiddenElements.forEach((el) => observer.observe(el));
 
 //#endregion
 
-//#region                   SKILLS CIRCLE
-
-// function DrawRound(entry) {
-//     document.addEventListener("DOMContentLoaded", () => {
-//         var rounds = entry.querySelectorAll(".round");
-//         rounds.forEach(round => {
-//             var roundCircle = round.querySelector("circle");
-//             var roundRadius = roundCircle.getAttribute("r");
-//             var roundPercent = round.dataset.percent;
-//             var roundCircum = 2 * roundRadius * Math.PI;
-//             var roundDraw = (roundPercent * roundCircum) / 100;
-//             round.style.strokeDasharray = roundDraw + " 99999";
-//         })
-//     })
-
-// };
-
-
-// document.addEventListener("DOMContentLoaded", function() {
-//     var rounds = document.querySelectorAll(".round");
-//     rounds.forEach(round => {
-//         var roundCircle = round.querySelector("circle");
-//         var roundRadius = roundCircle.getAttribute("r");
-//         var roundPercent = round.dataset.percent;
-//         var roundCircum = 2 * roundRadius * Math.PI;
-//         var roundDraw = (roundPercent * roundCircum) / 100;
-//         round.style.strokeDasharray = roundDraw + " 9999";
-//     })
-//   });
-
-
-//#endregion  
-
 
 //#region                   background animation
 //#endregion         
