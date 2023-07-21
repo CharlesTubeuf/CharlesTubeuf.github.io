@@ -1,12 +1,6 @@
 /*#region**************************************** GENERAL ************************************************/
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Josefin+Sans:wght@100&family=Roboto:wght@400&display=swap');
 
-:root {
-    --white: #fff;
-    --blue-dark: #fff;
-}
-
-
 * {
     margin: 0;
     padding: 0;
