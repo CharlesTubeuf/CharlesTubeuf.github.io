@@ -12,13 +12,19 @@ html {
 }
 
 body {
-    color: #152e4c !important;
-    background-color: #f7faff !important;
-    font-family: "Roboto", sans-serif;
-    background: linear-gradient(45deg, #ffdee9, #b5fffc) fixed;
-    background-size: cover;
-    overscroll-behavior: contain; /* Not support on safari...*/
-    outline: 1000px solid #01b2aa; /*to mask white when scroll top quickly on safari*/
+  color: #152e4c !important;
+  background-color: #f7faff !important;
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(45deg, #ffdee9, #b5fffc) fixed;
+  background-size: cover;
+  overscroll-behavior: contain; /* Not support on safari...*/
+  -ms-overflow-style: none; /*  Hide scrollbar for IE and Edge */
+  scrollbar-width: none; /*  Hide scrollbar for Firefox */
+}
+
+body::-webkit-scrollbar {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  display: none;
 }
 
 .container {
@@ -214,7 +220,7 @@ section:not(:first-child) {
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: translateY(-1000%);
+  transform: translateY(-100%);
   transition: 0.3s;
 }
 
@@ -562,30 +568,31 @@ section:not(:first-child) {
   margin-bottom: 3em;
 }
 
-#contact p{
-    color: #01b2aa;
+#contact p {
+  color: #01b2aa;
 }
-
-.form-container {
+.drop-container {
   position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-.form-container form {
+#contact form {
   text-align: center;
   background: rgba(255, 255, 255, 0.7);
   padding: 3rem;
-  min-width: 60vw;
-  max-width: 800px;
+  width: 80%;
   border-radius: 15px;
-  border : 1px solid #01b2aa;
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  -moz-backdrop-filter: blur(5px);
+  border: 1px solid #01b2aa;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  -moz-backdrop-filter: blur(2px);
   box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.1);
 }
 
-.form-container form input,
-.form-container form textarea {
+#contact form input,
+#contact form textarea {
   margin: 1rem 0;
   padding: 1rem;
   width: 100%;
@@ -593,22 +600,22 @@ section:not(:first-child) {
   background: rgba(255, 255, 255, 0.6);
   border-radius: 30px;
   border: none;
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  -moz-backdrop-filter: blur(5px);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  -moz-backdrop-filter: blur(2px);
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
-.form-container form input:hover,
-.form-container form input:focus,
-.form-container form textarea:hover,
-.form-container form textarea:focus {
+#contact form input:hover,
+#contact form input:focus,
+#contact form textarea:hover,
+#contact form textarea:focus {
   background: rgba(255, 255, 255, 1);
   outline: 0 none;
   box-shadow: 0 0 2px 1px #01b2aa;
 }
 
-.form-container form button {
+#contact form button {
   margin-top: 50px;
   padding: 5px 10px;
   width: 200px;
@@ -624,43 +631,28 @@ section:not(:first-child) {
   transition: 0.3s ease;
 }
 
-.form-container form button:hover {
+#contact form button:hover {
   color: #01b2aa !important;
   background: rgba(255, 255, 255, 1);
 }
 
-/* .form-container form button:after {
-  content: "";
-  position: absolute;
-  height: 150px;
-  width: 30px;
-  background: #bbbaba13;
-  left: -35px;
-  top: -40px;
-  transform: rotate(37deg);
-  transition: all 0.3s;
-}
-
-.form-container form button:hover:after {
-  left: 95%;
-} */
-
-.form-container .drop {
+#contact .drop {
   background-color: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  -moz-backdrop-filter: blur(5px);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  -moz-backdrop-filter: blur(2px);
   border-radius: 10px;
   border-left: 1px solid rgba(255, 255, 255, 0.4);
   border-top: 1px solid rgba(255, 255, 255, 0.4);
   box-shadow: 10px 10px 30px -8px rgba(0, 0, 0, 0.2);
   position: absolute;
 }
+
 .drop-1 {
   height: 280px;
   width: 280px;
   top: -50px;
-  left: -40px;
+  left: 30px;
   z-index: -1;
 }
 
@@ -668,23 +660,23 @@ section:not(:first-child) {
   height: 150px;
   width: 150px;
   top: -70px;
-  right: -110px;
+  right: 30px;
   z-index: 1;
 }
 
 .drop-3 {
   height: 180px;
   width: 180px;
-  bottom: 50%;
-  right: -80px;
+  bottom: 45%;
+  right: 0px;
   z-index: -1;
 }
 
 .drop-4 {
   height: 180px;
   width: 180px;
-  bottom: 60px;
-  left: -80px;
+  bottom: 25%;
+  left: 0px;
   z-index: -1;
 }
 
@@ -697,17 +689,17 @@ section:not(:first-child) {
 }
 
 .drop-6 {
-    height: 100px;
-    width: 100px;
-    bottom: -60px;
-    left: 80px;
-    z-index: 1;
-  }
+  height: 100px;
+  width: 100px;
+  bottom: -60px;
+  left: 80px;
+  z-index: 1;
+}
 
 /*#endregion*/
 
 /*#region**************************************** FOOTER *************************************************/
- 
+
 /*#region FOOTER waves  */
 .waves {
   position: relative;
@@ -895,8 +887,8 @@ section:not(:first-child) {
 
 /*#region**************************************** MEDIA QUERY ********************************************/
 @media screen and (max-width: 767px) {
- /*#region GENERAL*/
-    h1 {
+  /*#region GENERAL*/
+  h1 {
     padding: 55px 0 5px 0;
     font-size: 2.3em;
   }
@@ -946,6 +938,7 @@ section:not(:first-child) {
     border-bottom-right-radius: 100px;
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
 
     background: rgba(255, 255, 255, 0.34);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -999,8 +992,35 @@ section:not(:first-child) {
   }
 
   /*#endregion timeline*/
-  
+
   /*#region CONTACT*/
+  #contact form {
+    padding: 1rem;
+    width: 90%;
+  }
+
+  #contact .drop-1 {
+    width: 180px;
+    height: 180px;
+    left: 0px;
+  }
+
+  .drop-2 {
+    height: 100px;
+    width: 100px;
+    top: -85px;
+    right: 0px;
+  }
+
+  .drop-5 {
+    right: 0px;
+  }
+  .drop-6 {
+    height: 75px;
+    width: 75px;
+    bottom: -40px;
+    left: 0;
+  }
 
   /*#endregion*/
 
@@ -1020,6 +1040,5 @@ section:not(:first-child) {
     margin-bottom: 10px;
   }
   /*#endregion*/
-
 }
 /*#endregion*/
