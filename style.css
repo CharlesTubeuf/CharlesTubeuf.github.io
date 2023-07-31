@@ -27,10 +27,6 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-.container {
-  /* overflow: hidden; */
-}
-
 h1 {
   padding: 90px 0 10px 0;
   font-family: "Josefin Sans", sans-serif;
