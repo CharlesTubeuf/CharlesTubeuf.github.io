@@ -64,7 +64,7 @@ const observer = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('show');
             if (entry.target.classList.contains('skill')) {
-
+                
                 var rounds = entry.target.querySelectorAll(".round");
                 rounds.forEach(round => {
                     var roundCircle = round.querySelector("circle");
@@ -74,7 +74,7 @@ const observer = new IntersectionObserver((entries) => {
                     var roundDraw = (roundPercent * roundCircum) / 100;
                     round.style.strokeDasharray = roundDraw + " 9999";
                 });
-
+                
             }
         }
     });
@@ -84,6 +84,15 @@ hiddenElements.forEach((el) => observer.observe(el));
 
 //#endregion
 
+//#region                   HOBBIES ANIMATION
+ function activetravel(travel){
+  var active = document.querySelectorAll(".active-travel");
+  active.forEach( e =>{
+      e.classList.remove("active-travel");
+  })
+  travel.target.classList.add("active-travel");
+ }
+//#endregion
 
 //#region                   background animation
 //#endregion         
