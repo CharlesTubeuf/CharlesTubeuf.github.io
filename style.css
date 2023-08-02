@@ -211,7 +211,7 @@ section:not(:first-child) {
   column-gap: 5vw;
   height: 60px;
 
-  background: rgba(255, 255, 255, 0.34);
+  background: rgba(255, 255, 255, 0.65);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(19.4px);
   -webkit-backdrop-filter: blur(19.4px);
@@ -558,26 +558,33 @@ section:not(:first-child) {
 /*#endregion*/
 
 /*#region**************************************** SECTION - LOISIRS **************************************/
-#hobbies h3{
-margin-bottom: 2em;
+#hobbies h2 {
+  margin-bottom: 3em;
+}
+
+#hobbies h3 {
+  margin-bottom: 2em;
 }
 
 /*#region  TRAVEL*/
 #travel {
-  float: left;
-  clear: right;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .travel-container {
   height: 420px;
-  width: 960px; /* 640px + 4*80px */
+  width: 100%;
   display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
 .travel {
   position: relative;
-  width: 60px;
-  margin: 0px 10px;
+  min-width: 60px;
+  flex-basis: 60px;
   border-radius: 30px;
   overflow: hidden;
   cursor: pointer;
@@ -585,7 +592,7 @@ margin-bottom: 2em;
 }
 
 .active-travel {
-  width: 640px;
+  flex-basis: 640px;
   cursor: inherit;
 }
 
@@ -634,7 +641,8 @@ margin-bottom: 2em;
   margin: 0;
   padding: 0;
   color: white;
-  text-shadow: 5px 5px 10px black, -5px -5px 10px black,  2px 2px 4px black, -2px -2px 4px black;
+  text-shadow: 5px 5px 10px black, -5px -5px 10px black, 2px 2px 4px black,
+    -2px -2px 4px black;
 }
 
 /*#endregion*/
@@ -1079,13 +1087,31 @@ margin-bottom: 2em;
     left: -24px;
     transform: translate(-50%, -50%);
   }
-
+  
   .timeline ul li:nth-child(even) .circle {
     left: -24px;
   }
-
+  
   /*#endregion timeline*/
+  
+  /*#region HOBBIES*/
+    /*#region travels*/
+    .travel-container{
+      height: auto;
+      flex-direction: column;
+    }
 
+    .active-travel{
+      flex-basis: 420px;
+    }
+    /*#endregion*/
+    /*#region sports*/
+    /*#endregion*/
+    /*#region games*/
+    /*#endregion*/
+  
+  /*#endregion*/
+  
   /*#region CONTACT*/
   #contact form {
     padding: 1rem;
