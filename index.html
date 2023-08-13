@@ -47,14 +47,15 @@
                 </div>
 
                 <div class="presentation-container">
-                    <div class="img-container col-12 col-md-6 col-lg-3">
+                    <div class="distorded-picture-background">
                         <img src="./media/photo-cv.png" alt="user picture">
                     </div>
 
-                    <div class="description-container col-12 col-md-6 col-lg-6 p-2">
+                    <div class="description-container">
                         <span id="description"></span>
                     </div>
-                    <div class="info-container col-12 col-lg-3">
+
+                    <div class="info-container">
                         <div class="info-item">
                             <a href="https://www.google.fr/maps/place/95530+La+Frette-sur-Seine" target="_blanck"> La
                                 Frette-sur-seine 95530</a>
@@ -148,7 +149,6 @@
                 </div>
             </section>
 
-
             <section id="skills">
                 <h2> Compétences</h2>
 
@@ -240,40 +240,41 @@
 
             <section id="hobbies">
                 <h2>loisirs</h2>
-                
+
                 <div id="travel">
-                    <h3>Voyager</h3>
+                    <span class="travel-background"></span>
+                    <h3>Les voyages</h3>
                     <div class="travel-container">
-                        <div class="travel active-travel" onclick="activetravel.call(this)" >
-                            <img class="travel-background" src="media/mountains.jpg" alt="mountains">
+                        <div class="travel active-travel" onclick="activetravel.call(this)">
+                            <img class="travel-picture" src="media/mountains.jpg" alt="mountains">
                             <div class="travel-icon">
                                 <i class="fa-solid fa-mountain-sun" style="color: rgb(53, 107, 2);"></i>
                                 <p>Lac Huron</p>
                             </div>
                         </div>
                         <div class="travel" onclick="activetravel.call(this)">
-                            <img class="travel-background"  src="media/desert.jpg" alt="desert">
+                            <img class="travel-picture" src="media/desert.jpg" alt="desert">
                             <div class="travel-icon">
                                 <i class="fa-solid fa-sun" style="color: rgb(197, 161, 0);"></i>
                                 <p>Désert du Kalahari</p>
                             </div>
                         </div>
                         <div class="travel" onclick="activetravel.call(this)">
-                            <img class="travel-background"  src="media/sunrise.jpg" alt="Sunrise">
+                            <img class="travel-picture" src="media/sunrise.jpg" alt="Sunrise">
                             <div class="travel-icon">
                                 <i class="fa-solid fa-sailboat"></i>
                                 <p>Lac Baïkal</p>
                             </div>
                         </div>
                         <div class="travel" onclick="activetravel.call(this)">
-                            <img class="travel-background"  src="media/sea.jpg" alt="sea">
+                            <img class="travel-picture" src="media/sea.jpg" alt="sea">
                             <div class="travel-icon">
                                 <i class="fa-solid fa-umbrella-beach" style="color: rgb(9, 219, 226);"></i>
                                 <p>Les Maldives</p>
                             </div>
                         </div>
                         <div class="travel" onclick="activetravel.call(this)">
-                            <img class="travel-background"  src="media/forest.jpg" alt="forest">
+                            <img class="travel-picture" src="media/forest.jpg" alt="forest">
                             <div class="travel-icon">
                                 <i class="fa-solid fa-tree" style="color: rgb(233, 140, 33);"></i>
                                 <p>La forêt de Vizzavona</p>
@@ -283,11 +284,52 @@
                 </div>
 
                 <div id="sports">
-                    <h3>Sports</h3>
+                    <span class="sports-background"></span>
+                    <h3>Le sport</h3>
+                    <div class="sports-container">
+                        <div class="sport-card">
+                            <video class="sport-clip" src="media/skiing.mp4" preload="auto" muted loop></video>
+                            <div class="sport-description">
+                                <h4>Ski</h4>
+                            </div>
+                            <span class="mouse-detector"></span>
+                        </div>
+                        <div class="sport-card">
+                            <video class="sport-clip" src="media/running.mp4" muted loop></video>
+                            <div class="sport-description">
+                                <h4>Running</h4>
+                            </div>
+                            <span class="mouse-detector"></span>
+
+                        </div>
+                        <div class="sport-card">
+                            <video class="sport-clip" src="media/kayak.mp4" muted loop></video>
+                            <div class="sport-description">
+                                <h4>Kayak</h4>
+                            </div>
+                            <span class="mouse-detector"></span>
+
+                        </div>
+                    </div>
                 </div>
-                
+
                 <div id="games">
-                    <h3>Jeux Vidéo</h3>
+                    <span class="games-background"></span>
+                    <h3>Les jeux vidéos</h3>
+                    <div class="games-container">
+                        <div class="game-card">
+                            <div class="game-card-cover" style="background-image: url(media/red-dead-redemption.jpg);"></div>
+                          </div>
+                        <div class="game-card">
+                            <div class="game-card-cover" style="background-image: url(media/ark.png);"></div>
+                          </div>
+                        <div class="game-card">
+                            <div class="game-card-cover" style="background-image: url(media/rocket-league.jpg);"></div>
+                          </div>
+                        <div class="game-card">
+                            <div class="game-card-cover" style="background-image: url(media/TheForest.jpg);"></div>
+                          </div>
+                    </div>
                 </div>
             </section>
 

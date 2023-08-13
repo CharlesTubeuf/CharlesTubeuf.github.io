@@ -1,5 +1,5 @@
 /*#region**************************************** GENERAL ************************************************/
-@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Josefin+Sans:wght@100&family=Roboto:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Josefin+Sans:wght@100&family=Pacifico&family=Roboto:wght@400&display=swap");
 
 * {
   margin: 0;
@@ -47,7 +47,7 @@ h2 {
 h3 {
   text-align: center;
   font-family: "Roboto", sans-serif;
-  font-size: 1.5em !important;
+  font-size: 1.5em;
   text-shadow: -1px -1px -1px #01b2aa;
 }
 
@@ -61,10 +61,7 @@ a {
 }
 section {
   min-height: 100vh;
-}
-
-section:not(:first-child) {
-  padding: 20vh 0;
+  padding-bottom: 20vh;
 }
 
 /*#endregion*/
@@ -270,38 +267,50 @@ section:not(:first-child) {
 
 .presentation-container {
   display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 20px;
   flex-wrap: wrap;
-  justify-content: space-around;
-  row-gap: 30px;
 }
 
-.img-container {
-  position: relative;
-}
-
-.img-container img {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  margin: auto;
-  height: auto;
-  max-width: 100%;
-  max-height: 100%;
+.presentation-container img {
+  width: 250px;
   border-radius: 50%;
-  box-shadow: 1px 1px 15px #cac8c8;
-  transition: 0.3s;
 }
 
-.img-container img:hover {
-  scale: 1.05;
-  box-shadow: 1px 10px 15px #cac8c8;
-  filter: saturate(150%);
+.distorded-picture-background {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 300px;
+  background: #01b2aa;
+  border-radius: 24% 76% 70% 30% / 30% 55% 45% 70%;
+
+  animation: transform 10s linear infinite alternate;
+}
+
+@keyframes transform {
+  0%,
+  100% {
+    border-radius: 33% 67% 70% 30% / 30% 30% 70% 70%;
+  }
+  20% {
+    border-radius: 37% 63% 51% 49% / 37% 65% 35% 63%;
+  }
+  40% {
+    border-radius: 36% 64% 64% 36% / 64% 48% 52% 36%;
+  }
+  60% {
+    border-radius: 37% 63% 51% 49% / 30% 30% 70% 70%;
+  }
+  80% {
+    border-radius: 40% 60% 42% 58% / 41% 51% 49% 59%;
+  }
 }
 
 .description-container {
-  min-height: 304px;
+  flex-basis: 500px;
 }
 
 .info-container {
@@ -312,8 +321,8 @@ section:not(:first-child) {
   border-radius: 15px;
   box-shadow: 1px 1px 15px #cac8c8;
   background-color: #fff;
-  max-width: 220px;
-  min-height: 250px;
+  width: 220px;
+  height: 250px;
 }
 
 .info-item {
@@ -407,6 +416,7 @@ section:not(:first-child) {
 /*#region**************************************** SECTION - PARCOURS *************************************/
 #parcours {
   overflow: hidden;
+  padding: 0 10px 20vh 10px;
 }
 
 #parcours h2 {
@@ -558,12 +568,13 @@ section:not(:first-child) {
 /*#endregion*/
 
 /*#region**************************************** SECTION - LOISIRS **************************************/
+
 #hobbies h2 {
   margin-bottom: 3em;
 }
 
 #hobbies h3 {
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 }
 
 /*#region  TRAVEL*/
@@ -571,6 +582,33 @@ section:not(:first-child) {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+}
+
+.travel-background {
+  background-color: #01b2aa;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100%;
+  z-index: -2;
+}
+
+.travel-background::before {
+  content: "";
+  position: absolute;
+  width: 100vw;
+  top: calc(-15vh + 1px);
+  border-top: solid 15vh transparent;
+  border-left: solid 100vw #01b2aa;
+}
+.travel-background::after {
+  content: "";
+  position: absolute;
+  width: 100vw;
+  bottom: calc(-15vh + 1px);
+  border-bottom: solid 15vh transparent;
+  border-right: solid 100vw #01b2aa;
 }
 
 .travel-container {
@@ -588,15 +626,24 @@ section:not(:first-child) {
   border-radius: 30px;
   overflow: hidden;
   cursor: pointer;
-  transition: 0.3s;
+  box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 2px;
+  filter: brightness(0.9) grayscale(0.1);
+  transition: all 0.3s;
+}
+
+.travel:hover:not(.active-travel) {
+  filter: brightness(1) grayscale(0);
+  box-shadow:  rgba(0, 0, 0, 0.35) 3px 3px 5px;
+
 }
 
 .active-travel {
   flex-basis: 640px;
   cursor: inherit;
+  filter: brightness(1) grayscale(0);
 }
 
-.travel .travel-background {
+.travel .travel-picture {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -605,8 +652,9 @@ section:not(:first-child) {
   z-index: -2;
 }
 
-.travel:hover:not(.active-travel) .travel-background {
+.travel:hover:not(.active-travel) .travel-picture {
   transform: translate(-50%, -50%) scale(1.02);
+  filter: brightness(1) grayscale(0);
 }
 
 .travel:hover:not(.active-travel) .travel-icon {
@@ -649,17 +697,211 @@ section:not(:first-child) {
 
 /*#region  SPORTS*/
 #sports {
-  float: right;
-  clear: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-top: calc(15vh - 1px);
 }
+
+.sports-background {
+  background-color: #C8E1E6;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100%;
+  z-index: -2;
+}
+
+.sports-background::before {
+  content: "";
+  position: absolute;
+  width: 100vw;
+  top: calc(-15vh + 1px);
+  border-top: solid 15vh transparent;
+  border-left: solid 100vw #C8E1E6;
+}
+.sports-background::after {
+  content: "";
+  position: absolute;
+  width: 100vw;
+  bottom: calc(-15vh + 1px);
+  border-bottom: solid 15vh transparent;
+  border-right: solid 100vw #C8E1E6;
+}
+
+
+.sports-container {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.sport-card{
+  display: flex;
+  position: relative;
+  border-radius: 30px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  overflow: hidden;
+}
+
+.sport-clip {
+  width: 100%;
+  max-width: 400px;
+  max-height: 224px;
+  filter: brightness(0.6) grayscale(0.8);
+  transition: all 0.5s;
+}
+
+.active-clip , .clip-hover{
+  filter: brightness(1);
+}
+
+.sport-description {
+  position: absolute;
+  padding: 1em;
+  width: 100%;
+  height: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  text-shadow: 2px 2px 10px #00000087;
+  transition: all 0.5s;
+}
+
+.active-clip ~ .sport-description, .clip-hover ~ .sport-description {
+  opacity: 0;
+}
+
+.mouse-detector{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+}
+
+
 /*#endregion*/
 
 /*#region  GAMES*/
 #games {
-  float: left;
-  clear: right;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-top: calc(15vh - 1px);
+}
+
+.games-background {
+  background-color: #5DC9C6;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100%;
+  z-index: -2;
+}
+
+.games-background::before {
+  content: "";
+  position: absolute;
+  width: 100vw;
+  top: calc(-15vh + 1px);
+  border-top: solid 15vh transparent;
+  border-left: solid 100vw #5DC9C6;
+}
+.games-background::after {
+  content: "";
+  position: absolute;
+  width: 100vw;
+  bottom: calc(-15vh + 1px);
+  border-bottom: solid 15vh transparent;
+  border-right: solid 100vw #5DC9C6;
+}
+
+.games-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+  width: 100%;
+  max-width: 1200px;
+  padding: 30px;
+}
+@media screen and (max-width: 760px) {
+  .games-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.game-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding-bottom: 150%;
+  perspective: 1000px;
+}
+.game-card-cover {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  background-size: cover;
+  perspective-origin: 50% 50%;
+  transform-style: preserve-3d;
+  transform-origin: top center;
+  will-change: transform;
+  transform: skewX(0.001deg);
+  transition: transform 0.35s ease-in-out;
+}
+.game-card-cover::after {
+  display: block;
+  content: "";
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  background: linear-gradient(226deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.4) 35%, rgba(255, 255, 255, 0.2) 42%, rgba(255, 255, 255, 0) 60%);
+  transform: translateY(-20%);
+  will-change: transform;
+  transition: transform 0.65s cubic-bezier(0.18, 0.9, 0.58, 1);
+}
+.game-card:hover .game-card-cover {
+  transform: rotateX(7deg) translateY(-6px);
+}
+.game-card:hover .game-card-cover::after {
+  transform: translateY(0%);
+}
+.game-card::before {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 6px 12px 12px rgba(0, 0, 0, 0.4);
+  will-change: opacity;
+  transform-origin: top center;
+  transform: skewX(0.001deg);
+  transition: transform 0.35s ease-in-out, opacity 0.5s ease-in-out;
+}
+.game-card:hover::before {
+  opacity: 0.6;
+  transform: rotateX(7deg) translateY(-6px) scale(1.05);
 }
 /*#endregion*/
+
 /*#endregion*/
 
 /*#region**************************************** SECTION - CONTACT **************************************/
@@ -680,14 +922,12 @@ section:not(:first-child) {
 
 #contact form {
   text-align: center;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255);
   padding: 3rem;
   width: 80%;
   border-radius: 15px;
   border: 1px solid #01b2aa;
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-  -moz-backdrop-filter: blur(2px);
+
   box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.1);
 }
 
@@ -700,10 +940,7 @@ section:not(:first-child) {
   background: rgba(255, 255, 255, 0.6);
   border-radius: 30px;
   border: none;
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-  -moz-backdrop-filter: blur(2px);
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
 }
 
@@ -1000,12 +1237,7 @@ section:not(:first-child) {
   }
 
   h3 {
-    font-size: 1.2em !important;
-  }
-
-  .img-container {
-    height: 30vh;
-    margin: 15px 0;
+    font-size: 1.2em;
   }
 
   .hiddenLeft {
@@ -1087,31 +1319,32 @@ section:not(:first-child) {
     left: -24px;
     transform: translate(-50%, -50%);
   }
-  
+
   .timeline ul li:nth-child(even) .circle {
     left: -24px;
   }
-  
-  /*#endregion timeline*/
-  
-  /*#region HOBBIES*/
-    /*#region travels*/
-    .travel-container{
-      height: auto;
-      flex-direction: column;
-    }
 
-    .active-travel{
-      flex-basis: 420px;
-    }
-    /*#endregion*/
-    /*#region sports*/
-    /*#endregion*/
-    /*#region games*/
-    /*#endregion*/
-  
+  /*#endregion timeline*/
+
+  /*#region HOBBIES*/
+
+  /*#region travels*/
+  .travel-container {
+    height: auto;
+    flex-direction: column;
+  }
+
+  .active-travel {
+    flex-basis: 420px;
+  }
   /*#endregion*/
-  
+  /*#region sports*/
+  /*#endregion*/
+  /*#region games*/
+  /*#endregion*/
+
+  /*#endregion*/
+
   /*#region CONTACT*/
   #contact form {
     padding: 1rem;
