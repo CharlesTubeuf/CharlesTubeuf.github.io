@@ -311,18 +311,23 @@ section {
 
 .description-container {
   flex-basis: 500px;
+  min-height: 300px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .info-container {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  padding: 20px;
+  padding: 0px 20px;
   border-radius: 15px;
   box-shadow: 1px 1px 15px #cac8c8;
   background-color: #fff;
   width: 220px;
-  height: 250px;
+  height: 300px;
 }
 
 .info-item {
@@ -336,7 +341,6 @@ section {
 
 .info-container i {
   scale: 1.5;
-  margin-bottom: 0.5em;
   transition: 0.3s;
   color: #01b2aa;
 }

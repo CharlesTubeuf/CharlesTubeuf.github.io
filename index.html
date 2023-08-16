@@ -24,11 +24,11 @@
             <input type="checkbox" id="navigationCheckbox" />
             <span id="burger"></span>
             <ul class="nav-menu">
-                <li><a href="#" alt="à propos">à propos</a></li>
-                <li><a href="#parcours" alt="Parcours">Parcours</a></li>
-                <li><a href="#skills" alt="Compétences">Competences</a></li>
-                <li><a href="#hobbies" alt="Loisirs">Loisirs</a></li>
-                <li><a href="#contact" alt="Contact">Contact</a></li>
+                <li><a href="#" alt="à propos" id="closeNav">à propos</a></li>
+                <li><a href="#parcours" alt="Parcours" id="closeNav">Parcours</a></li>
+                <li><a href="#skills" alt="Compétences" id="closeNav">Competences</a></li>
+                <li><a href="#hobbies" alt="Loisirs" id="closeNav">Loisirs</a></li>
+                <li><a href="#contact" alt="Contact" id="closeNav">Contact</a></li>
             </ul>
 
         </nav>
@@ -65,6 +65,11 @@
                             <a href=mailto:charles.tubeuf@hotmail.fr?subject=From%20your%20portfolio%20>
                                 charles.tubeuf@hotmail.fr</a>
                             <i class="fa-solid fa-at"></i>
+                        </div>
+                        <div class="info-item">
+                            <a href="#" target="_blanck">
+                                Linkedin</a>
+                            <i class="fa-brands fa-linkedin-in"></i>
                         </div>
                         <div class="info-item">
                             <a href=tel:+330698149023> 06.98.14.90.23</a>
@@ -113,8 +118,7 @@
                                 Réalisation d'un site web en groupe. Création de servlets, de services web, des
                                 protections en JS, ainsi qu'une Base de donnée MySQL.<br>
                                 Développement et conception de différentes pages HTML et de servlets, Onboarding
-                                d'utilisateurs.<br>
-                                Première entreprise difficile à trouvé du au covid19.
+                                d'utilisateurs.
                             </p>
                             <span class="circle"></span>
                         </li>
@@ -318,17 +322,18 @@
                     <h3>Les jeux vidéos</h3>
                     <div class="games-container">
                         <div class="game-card">
-                            <div class="game-card-cover" style="background-image: url(media/red-dead-redemption.jpg);"></div>
-                          </div>
+                            <div class="game-card-cover" style="background-image: url(media/red-dead-redemption.jpg);">
+                            </div>
+                        </div>
                         <div class="game-card">
                             <div class="game-card-cover" style="background-image: url(media/ark.png);"></div>
-                          </div>
+                        </div>
                         <div class="game-card">
                             <div class="game-card-cover" style="background-image: url(media/rocket-league.jpg);"></div>
-                          </div>
+                        </div>
                         <div class="game-card">
                             <div class="game-card-cover" style="background-image: url(media/TheForest.jpg);"></div>
-                          </div>
+                        </div>
                     </div>
                 </div>
             </section>

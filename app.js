@@ -16,8 +16,7 @@ document.addEventListener("click", function (event) {
   var isExcluded = excludedSelectors.some(function (selector) {
     return target.matches(selector) || target.closest(selector);
   });
-
-  if (!isExcluded) {
+  if (!isExcluded || (target.id == "closeNav") ) {
     checkbox.checked = false;
   }
 });
@@ -51,6 +50,7 @@ if (
       typeSpeed: 5,
       backSpeed: 20,
       startDelay: 1500,
+      cursorChar: '',
       onComplete(description) {
         description.cursor.remove();
       },
@@ -119,31 +119,6 @@ cards.forEach((card) => {
     clip.classList.add("active-clip");
   });
 });
-
-// const clips = document.querySelectorAll(".sport-clip");
-// clips.forEach(clip => {
-//     clip.addEventListener('mouseenter',
-//     function(e){
-//         clip.play();
-//         clip.classList.add("clip-hover");
-//     });
-//     clip.addEventListener('mouseout',
-//     function(e){
-//         if(!clip.classList.contains("active-clip")){
-//             clip.pause();
-//         }
-//         clip.classList.remove("clip-hover");
-//     });
-//     clip.addEventListener('click',
-//     function(e){
-//         document.querySelectorAll(".active-clip").forEach(clip => {
-//             clip.classList.remove("active-clip");
-//             clip.pause();
-//         })
-//         clip.play();
-//         clip.classList.add("active-clip")
-//     });
-// });
 
 //#endregion
 
