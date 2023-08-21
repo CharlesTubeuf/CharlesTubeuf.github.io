@@ -38,13 +38,6 @@ if (
           " Rapidement captivé par cette discipline, j'ai décidé d'en faire mon métier.<br/> " +
           " Après plusieurs formations et <strong style='color: #01b2aa;'> une année et demie d'alternance</strong>, je suis actuellement à la recherche" +
           " d'une entreprise pour développer mes compétences et exprimer ma <strong style='color: #01b2aa;'>créativité</strong>.<br/>" +
-          " Cette animation est réalisée via la library typed.js, merci Matt Boldt.^2000",
-
-        "Bonjour à tous et à toutes,<br/>  diplômé d'une <strong style='color: #01b2aa;'>école d'ingénieur</strong>" +
-          " en biologie j'ai découvert le <strong style='color: #01b2aa;'>développement web</strong>.<br/> " +
-          " Rapidement captivé par cette discipline, j'ai décidé d'en faire mon métier.<br/> " +
-          " Après plusieurs formations et <strong style='color: #01b2aa;'> une année et demie d'alternance</strong>, je suis actuellement à la recherche" +
-          " d'une entreprise pour développer mes compétences et exprimer ma <strong style='color: #01b2aa;'>créativité</strong>.<br/>" +
           " Bienvenu sur mon cv !",
       ],
       typeSpeed: 5,

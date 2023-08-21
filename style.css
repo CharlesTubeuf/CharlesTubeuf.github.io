@@ -317,6 +317,10 @@ section {
   align-items: center;
   justify-content: center;
 }
+.description-container span{
+min-height: 300px;
+
+}
 
 .info-container {
   display: flex;
