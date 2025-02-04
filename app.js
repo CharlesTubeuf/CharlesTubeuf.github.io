@@ -33,10 +33,10 @@ if (
           " Après plusieurs formations et <strong style='color: #01b2aa;'> quelques expériences professionnelles</strong>,^800" + 
           " j'ai découvert une réelle appétence pour l'<strong style='color: #01b2aa;'>UI/UX</strong> et la satisfaction" +
           " de produire du <strong style='color: #01b2aa;'>clean code</strong>. <br/> ^800" + 
-          " A mon arrivé sur un projet je n'hésite pas a de poser des questions et je suis ravi de pouvoir aider à mon tour !<br/> ^800" +
+          " A mon arrivée sur un projet je n'hésite pas a poser des questions et je suis ravi de pouvoir aider à mon tour !<br/> ^800" +
           " Je souhaite intégrer une entreprise qui valorise le <strong style='color: #01b2aa;'>craftsmanship</strong> ^500" + 
           " et <strong style='color: #01b2aa;'>la veille documentaire</strong> afin de favoriser l'excellence et l'évolution de ses collaborateurs.<br/> ^800" +
-          " Bienvenu sur mon cv !"
+          " Bienvenue sur mon cv !"
       ],
       typeSpeed: 5,
       backSpeed: 20,
